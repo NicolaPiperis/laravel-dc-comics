@@ -19,9 +19,7 @@
 
     @include('components.header')
 
-    <main>
-        Hello, world!
-    </main>
+    @yield('content')
 
     @include('components.footer')
 

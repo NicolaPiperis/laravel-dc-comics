@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\mainController as mainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout/main-layout');
-});
+Route::get('/', [mainController :: class, 'index']) -> name('home');
+
+Route::get('/show/{id}', [mainController :: class, 'show']) -> name('show');
