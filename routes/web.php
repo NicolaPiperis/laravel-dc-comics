@@ -25,3 +25,4 @@ Route::get('/show/{id}', [mainController :: class, 'show']) -> name('show');
 Route::get('/edit/{id}', [mainController :: class, 'edit']) -> name('edit');
 Route::put('/update/{id}', [mainController :: class, 'update']) -> name('update');
 
+Route :: delete('/destroy/{$id}', [mainController :: class, 'destroy']) -> name('destroy');

@@ -15,6 +15,11 @@
                     <a class="text-decoration-none text-info" href="{{ route('edit', $comic->id) }}">
                         EDIT
                     </a>
+                    <form action="{{ route('destroy', $comic->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="DELETE" class="text-decoration-none text-info">
+                    </form>
                 </li>
             </ul>
         @endforeach

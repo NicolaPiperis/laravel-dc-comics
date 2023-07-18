@@ -46,7 +46,14 @@ class mainController extends Controller
         $data = $request -> all();
         $comic = Comic :: findOrFail($id);
         $comic -> update($data);
-        return redirected() -> route('show', $comic -> id);
+        return redirect() -> route('show', $comic -> id);
+    }
+
+    public function destroy($id){
+
+        $comic = Comic :: findOrFail($id);
+        $comic -> delete();
+        return redirect() -> route('index');
     }
 }
 

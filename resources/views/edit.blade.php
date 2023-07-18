@@ -5,10 +5,10 @@
 
         <h1>Aggiungi un nuovo fumetto</h1>
 
-        <form class="py-3" method="POST" action="{{ route('update'), $comic->id }}">
+        <form class="py-3" method="POST" action="{{ route('update', $comic->id) }}">
 
             @csrf
-            @method('put')
+            @method('PUT')
 
             <div>
                 <label for="title">Title</label>
@@ -52,7 +52,7 @@
                 <input type="text" name="type" id="type" value="{{ $comic->type }}">
             </div>
 
-            <input class="rounded mt-3 px-3" type="submit" value="Create">
+            <input class="rounded mt-3 px-3" type="submit" value="Edit">
 
         </form>
 
