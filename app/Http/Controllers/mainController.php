@@ -16,5 +16,16 @@ class mainController extends Controller
         $comic = Comic :: findOrFail($id);
         return view('show', compact('comic'));
     }
+
+    public function create(){
+        return view('create');
+    }
+
+    public function store(Request $request){
+
+        // return view('store');
+        $data = $request -> all();
+        dd($data);
+    }
 }
 

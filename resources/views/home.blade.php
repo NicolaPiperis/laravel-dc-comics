@@ -2,11 +2,14 @@
 
 @section('content')
     <main>
-        Hello, World!
+        <h1 class="text-center py-3">
+            Fumetti disponibili
+            <a class="text-decoration-none text-info" href="{{ route('create') }}">+</a>
+        </h1>
         @foreach ($comics as $comic)
-            <ul>
+            <ul class="py-3 text-center fs-5">
                 <li class="list-unstyled">
-                    <a href="{{ route('show', $comic->id) }}">
+                    <a class="text-decoration-none text-info" href="{{ route('show', $comic->id) }}">
                         {{ $comic['title'] }}
                     </a>
                 </li>

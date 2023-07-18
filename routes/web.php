@@ -16,4 +16,9 @@ use App\Http\Controllers\mainController as mainController;
 
 Route::get('/', [mainController :: class, 'index']) -> name('home');
 
+
+Route::get('/create', [mainController :: class, 'create']) -> name('create');
+
+Route::post('/store', [mainController :: class, 'store']) -> name('store');
+
 Route::get('/show/{id}', [mainController :: class, 'show']) -> name('show');
