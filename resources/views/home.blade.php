@@ -12,6 +12,9 @@
                     <a class="text-decoration-none text-info" href="{{ route('show', $comic->id) }}">
                         {{ $comic['title'] }}
                     </a>
+                    <a class="text-decoration-none text-info" href="{{ route('edit', $comic->id) }}">
+                        EDIT
+                    </a>
                 </li>
             </ul>
         @endforeach
