@@ -49,11 +49,11 @@ class mainController extends Controller
         return redirect() -> route('show', $comic -> id);
     }
 
-    public function destroy($id){
+    public function delete($id){
 
         $comic = Comic :: findOrFail($id);
         $comic -> delete();
-        return redirect() -> route('index');
+        return redirect() -> route('home');
     }
 }
 
