@@ -25,7 +25,26 @@ class mainController extends Controller
 
         // return view('store');
         $data = $request -> validate(
-            $this -> getValidationRule()
+            // $this -> getValidationRule()
+            [
+                'title' => 'required',
+                'description' => 'required|min:10|max:1000',
+                'thumb' => 'required|min:5|max:500',
+                'price' => 'required|integer|numeric|min:5|max:200',
+                'series' => 'required|min:3|max:255',
+                'sale_date' => 'required|date',
+                'type' => 'required|min:3|max:255'
+            ],
+            [
+
+                "title.require" => "Un titolo è richiesto",
+                "description.require" => "Una descrizione è richiesta",
+                "thumb.require" => "Un percorso d'immagine è richiesto",
+                "price.require" => "E' richiesto un prezzo espresso in interi",
+                "series.require" => "Nome serie richiesta",
+                "sale_date.require" => "Data richiesta",
+                "type.require" => "Tipologia prodotto richiesta"
+            ]
         );
 
         $comic = Comic :: create($data);
@@ -55,6 +74,7 @@ class mainController extends Controller
     private function getValidationRule() {
 
         return [
+            [
             'title' => 'required',
             'description' => 'required|min:10|max:1000',
             'thumb' => 'required|min:5|max:500',
@@ -62,6 +82,17 @@ class mainController extends Controller
             'series' => 'required|min:3|max:255',
             'sale_date' => 'required|date',
             'type' => 'required|min:3|max:255'
+            ],
+            [
+
+            "title.require" => "Un titolo è richiesto",
+            "description.require" => "Una descrizione è richiesta",
+            "thumb.require" => "Un percorso d'immagine è richiesto",
+            "price.require" => "E' richiesto un prezzo espresso in interi",
+            "series.require" => "Nome serie richiesta",
+            "sale_date.require" => "Data richiesta",
+            "type.require" => "Tipologia prodotto richiesta"
+            ]
         ];
     }
 }
